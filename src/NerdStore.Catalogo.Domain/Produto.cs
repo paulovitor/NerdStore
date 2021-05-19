@@ -78,32 +78,4 @@ namespace NerdStore.Catalogo.Domain
             Validacoes.ValidarSeVazio(Imagem, ImagemVazia);
         }
     }
-
-    public class Categoria : Entity
-    {
-        public const string NomeVazio = "O campo Nome da categoria não pode estar vazio";
-        public const string CodigoIgualAZero = "O campo Código não pode ser 0";
-
-        public string Nome { get; private set; }
-        public int Codigo { get; private set; }
-
-        public Categoria(string nome, int codigo)
-        {
-            Nome = nome;
-            Codigo = codigo;
-
-            Validar();
-        }
-
-        public override string ToString()
-        {
-            return $"{Nome} - {Codigo}";
-        }
-
-        public void Validar()
-        {
-            Validacoes.ValidarSeVazio(Nome, NomeVazio);
-            Validacoes.ValidarSeIgual(Codigo, 0, CodigoIgualAZero);
-        }
-    }
 }
