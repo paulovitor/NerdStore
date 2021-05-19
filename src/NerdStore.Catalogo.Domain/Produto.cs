@@ -5,6 +5,12 @@ namespace NerdStore.Catalogo.Domain
 {
     public class Produto : Entity, IAggregateRoot
     {
+        public const string NomeVazio = "O campo Nome do produto não pode estar vazio";
+        public const string DescricaoVazia = "O campo Descrição do produto não pode estar vazio";
+        public const string CategoriaIdVazio = "O campo CategoriaId do produto não pode estar vazio";
+        public const string ValorMenorOuIgualAZero = "O campo Valor do produto não pode se menor ou igual a 0";
+        public const string ImagemVazia = "O campo Imagem do produto não pode estar vazio";
+
         public Guid CategoriaId { get; private set; }
         public string Nome { get; private set; }
         public string Descricao { get; private set; }
@@ -13,9 +19,10 @@ namespace NerdStore.Catalogo.Domain
         public DateTime DataCadastro { get; private set; }
         public string Imagem { get; private set; }
         public int QuantidadeEstoque { get; private set; }
+        public Dimensoes Dimensoes { get; private set; }
         public Categoria Categoria { get; private set; }
 
-        public Produto(string nome, string descricao, bool ativo, decimal valor, Guid categoriaId, DateTime dataCadastro, string imagem)
+        public Produto(string nome, string descricao, bool ativo, decimal valor, Guid categoriaId, DateTime dataCadastro, string imagem, Dimensoes dimensoes)
         {
             CategoriaId = categoriaId;
             Nome = nome;
@@ -24,6 +31,7 @@ namespace NerdStore.Catalogo.Domain
             Valor = valor;
             DataCadastro = dataCadastro;
             Imagem = imagem;
+            Dimensoes = dimensoes;
 
             Validar();
         }
@@ -40,7 +48,7 @@ namespace NerdStore.Catalogo.Domain
 
         public void AlterarDescricao(string descricao)
         {
-            Validacoes.ValidarSeVazio(descricao, "O campo Descrição do produto não pode estar vazio");
+            Validacoes.ValidarSeVazio(descricao, DescricaoVazia);
             Descricao = descricao;
         }
 
@@ -63,16 +71,19 @@ namespace NerdStore.Catalogo.Domain
 
         public void Validar()
         {
-            Validacoes.ValidarSeVazio(Nome, "O Campo Nome do produto não pode estar vazio");
-            Validacoes.ValidarSeVazio(Descricao, "O campo Descricao do produto não pode estar vazio");
-            Validacoes.ValidarSeIgual(CategoriaId, Guid.Empty, "O campo CategoriaId do produto não pode estar vazio");
-            Validacoes.ValidarSeMenorQue(Valor, 1, "O campo Valor do produto não pode se menor igual a 0");
-            Validacoes.ValidarSeVazio(Imagem, "O campo Imagem do produto não pode estar vazio");
+            Validacoes.ValidarSeVazio(Nome, NomeVazio);
+            Validacoes.ValidarSeVazio(Descricao, DescricaoVazia);
+            Validacoes.ValidarSeIgual(CategoriaId, Guid.Empty, CategoriaIdVazio);
+            Validacoes.ValidarSeMenorQue(Valor, 1, ValorMenorOuIgualAZero);
+            Validacoes.ValidarSeVazio(Imagem, ImagemVazia);
         }
     }
 
     public class Categoria : Entity
     {
+        public const string NomeVazio = "O campo Nome da categoria não pode estar vazio";
+        public const string CodigoIgualAZero = "O campo Código não pode ser 0";
+
         public string Nome { get; private set; }
         public int Codigo { get; private set; }
 
@@ -91,8 +102,8 @@ namespace NerdStore.Catalogo.Domain
 
         public void Validar()
         {
-            Validacoes.ValidarSeVazio(Nome, "O campo Nome da categoria não pode estar vazio");
-            Validacoes.ValidarSeIgual(Codigo, 0, "O campo Código não pode ser 0");
+            Validacoes.ValidarSeVazio(Nome, NomeVazio);
+            Validacoes.ValidarSeIgual(Codigo, 0, CodigoIgualAZero);
         }
     }
 }

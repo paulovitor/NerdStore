@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Catalogo.Domain",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Core", "src\NerdStore.Core\NerdStore.Core.csproj", "{9E63C383-77BF-4568-A4BD-E055824E30A2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{633E663A-C6DD-47B2-B362-550D5D08D4D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Catalogo.Domain.Tests", "tests\NerdStore.Catalogo.Domain.Tests\NerdStore.Catalogo.Domain.Tests.csproj", "{2986F6BF-A4DB-4D80-9226-EB7F5D35627A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,9 +50,22 @@ Global
 		{9E63C383-77BF-4568-A4BD-E055824E30A2}.Release|x64.Build.0 = Release|Any CPU
 		{9E63C383-77BF-4568-A4BD-E055824E30A2}.Release|x86.ActiveCfg = Release|Any CPU
 		{9E63C383-77BF-4568-A4BD-E055824E30A2}.Release|x86.Build.0 = Release|Any CPU
+		{2986F6BF-A4DB-4D80-9226-EB7F5D35627A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2986F6BF-A4DB-4D80-9226-EB7F5D35627A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2986F6BF-A4DB-4D80-9226-EB7F5D35627A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2986F6BF-A4DB-4D80-9226-EB7F5D35627A}.Debug|x64.Build.0 = Debug|Any CPU
+		{2986F6BF-A4DB-4D80-9226-EB7F5D35627A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2986F6BF-A4DB-4D80-9226-EB7F5D35627A}.Debug|x86.Build.0 = Debug|Any CPU
+		{2986F6BF-A4DB-4D80-9226-EB7F5D35627A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2986F6BF-A4DB-4D80-9226-EB7F5D35627A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2986F6BF-A4DB-4D80-9226-EB7F5D35627A}.Release|x64.ActiveCfg = Release|Any CPU
+		{2986F6BF-A4DB-4D80-9226-EB7F5D35627A}.Release|x64.Build.0 = Release|Any CPU
+		{2986F6BF-A4DB-4D80-9226-EB7F5D35627A}.Release|x86.ActiveCfg = Release|Any CPU
+		{2986F6BF-A4DB-4D80-9226-EB7F5D35627A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{88B484C0-8464-4791-B40A-BD3E5B4028B8} = {4DDC8731-7624-4BC5-9476-56F6EDE0EF8B}
 		{9E63C383-77BF-4568-A4BD-E055824E30A2} = {4DDC8731-7624-4BC5-9476-56F6EDE0EF8B}
+		{2986F6BF-A4DB-4D80-9226-EB7F5D35627A} = {633E663A-C6DD-47B2-B362-550D5D08D4D7}
 	EndGlobalSection
 EndGlobal
