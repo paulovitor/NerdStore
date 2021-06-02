@@ -36,6 +36,10 @@ namespace NerdStore.Catalogo.Domain
             Validar();
         }
 
+        protected Produto()
+        {
+        }
+
         // ad hoc setters
         public void Ativar() => Ativo = true;
         public void Desativar() => Ativo = false;
