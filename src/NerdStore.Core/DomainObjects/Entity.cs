@@ -37,5 +37,10 @@ namespace NerdStore.Core.DomainObjects
         }
 
         public override string ToString() => $"{GetType().Name} [Id={Id}]";
+
+        public virtual bool EhValido()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
