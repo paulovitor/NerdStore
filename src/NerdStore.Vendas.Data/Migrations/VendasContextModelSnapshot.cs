@@ -34,7 +34,7 @@ namespace NerdStore.Vendas.Data.Migrations
                     b.Property<int>("Codigo")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasDefaultValueSql("nextval('minhasequencia')");
+                        .HasDefaultValueSql("NEXT VALUE FOR minhasequencia");
 
                     b.Property<DateTime>("DataCadastro")
                         .HasColumnType("datetime2");

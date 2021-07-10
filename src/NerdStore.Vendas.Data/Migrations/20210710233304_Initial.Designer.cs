@@ -10,7 +10,7 @@ using NerdStore.Vendas.Data;
 namespace NerdStore.Vendas.Data.Migrations
 {
     [DbContext(typeof(VendasContext))]
-    [Migration("20210710224313_Initial")]
+    [Migration("20210710233304_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,7 +36,7 @@ namespace NerdStore.Vendas.Data.Migrations
                     b.Property<int>("Codigo")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasDefaultValueSql("nextval('minhasequencia')");
+                        .HasDefaultValueSql("NEXT VALUE FOR minhasequencia");
 
                     b.Property<DateTime>("DataCadastro")
                         .HasColumnType("datetime2");

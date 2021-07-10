@@ -37,7 +37,7 @@ namespace NerdStore.Vendas.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Codigo = table.Column<int>(type: "int", nullable: false, defaultValueSql: "nextval('minhasequencia')"),
+                    Codigo = table.Column<int>(type: "int", nullable: false, defaultValueSql: "NEXT VALUE FOR minhasequencia"),
                     ClienteId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     VoucherId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     VoucherUtilizado = table.Column<bool>(type: "bit", nullable: false),
