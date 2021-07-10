@@ -43,7 +43,6 @@ namespace NerdStore.Catalogo.Data
             }
 
             return await base.SaveChangesAsync() > 0;
-
         }
     }
 }
